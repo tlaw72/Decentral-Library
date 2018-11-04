@@ -46,7 +46,7 @@ contract("Election", function(accounts) {
     })
   });
 
-  it("throws an exception for invalid candidates", function() {
+  it("throws an exception for invalid candiates", function() {
     return Election.deployed().then(function(instance) {
       electionInstance = instance;
       return electionInstance.vote(99, { from: accounts[1] })
@@ -86,6 +86,4 @@ contract("Election", function(accounts) {
       assert.equal(voteCount, 1, "candidate 2 did not receive any votes");
     });
   });
-
-  
 });
